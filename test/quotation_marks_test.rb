@@ -45,6 +45,28 @@ describe 'quotation marks' do
     CSS
   end
 
+  it 'should use quotation marks per language' do
+    assert_sass <<-SCSS, <<-CSS
+      @import "quotation-marks";
+      .my-class {
+        @include localized-quotation-marks(en de);
+      }
+    SCSS
+      .my-class:lang(en):before,
+      .my-class:lang(de):after {
+        content: "“";
+      }
+
+      .my-class:lang(en):after {
+        content: "”";
+      }
+
+      .my-class:lang(de):before {
+        content: "„";
+      }
+    CSS
+  end
+
 end
 
 

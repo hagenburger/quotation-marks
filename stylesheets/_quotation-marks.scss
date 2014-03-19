@@ -32,3 +32,11 @@ $quotation-mark-placeholders: ();
   }
 }
 
+@mixin localized-quotation-marks($languages) {
+  @each $language in $languages {
+    &:lang(#{$language}) {
+      @include quotation-marks($language);
+    }
+  }
+}
+
