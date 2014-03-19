@@ -2,17 +2,20 @@ require 'test_helper'
 
 describe 'quotation marks' do
 
-  it 'initial test' do
+  it 'should use english quotation marks' do
     assert_sass <<-SCSS, <<-CSS
       @import "quotation-marks";
       .my-class {
-        &:before {
-          content: "“";
-        }
+        @include quotation-marks(en);
       }
     SCSS
       .my-class:before {
-        content: "“"; }
+        content: "“";
+      }
+
+      .my-class:after {
+        content: "”";
+      }
     CSS
   end
 

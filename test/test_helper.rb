@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require 'quotation-marks'
-require 'heredoc_unindent'
 
 def assert_sass(scss, css)
   options  = {
@@ -10,6 +9,6 @@ def assert_sass(scss, css)
   }
   result = Sass::Engine.new(scss, options).render
   result.gsub! %r(@charset "UTF-8";), ''
-  css.unindent.strip.must_equal result.unindent.strip
+  result.strip.gsub(/\s+/, ' ').must_equal css.strip.gsub(/\s+/, ' ').strip
 end
 

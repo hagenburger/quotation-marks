@@ -1,1 +1,33 @@
+$quotation-marks: (
+  default: “ ”,
+  en: “ ”
+);
+
+$quotation-mark-placeholders: ();
+
+@mixin quotation-marks($language) {
+  $localized-quotation-marks: map-get($quotation-marks, $language);
+  $start: nth($localized-quotation-marks, 1);
+  $end: nth($localized-quotation-marks, 2);
+
+  @if not index($quotation-mark-placeholders, $start) {
+    $quotation-mark-placeholders: append($quotation-mark-placeholders, $start) !global;
+    @at-root %quotation-mark-#{$start} {
+      content: "#{$start}";
+    }
+  }
+  &:before {
+    @extend %quotation-mark-#{$start};
+  }
+
+  @if not index($quotation-mark-placeholders, $end) {
+    $quotation-mark-placeholders: append($quotation-mark-placeholders, $end) !global;
+    @at-root %quotation-mark-#{$end} {
+      content: "#{$end}";
+    }
+  }
+  &:after {
+    @extend %quotation-mark-#{$end};
+  }
+}
 
