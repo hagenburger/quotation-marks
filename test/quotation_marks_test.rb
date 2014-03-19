@@ -19,6 +19,32 @@ describe 'quotation marks' do
     CSS
   end
 
+  it 'should use english and german quotation marks and use as few selectors as possible' do
+    assert_sass <<-SCSS, <<-CSS
+      @import "quotation-marks";
+      .my-class {
+        @include quotation-marks(en);
+      }
+
+      .my-other-class {
+        @include quotation-marks(de);
+      }
+    SCSS
+      .my-class:before,
+      .my-other-class:after {
+        content: "“";
+      }
+
+      .my-class:after {
+        content: "”";
+      }
+
+      .my-other-class:before {
+        content: "„";
+      }
+    CSS
+  end
+
 end
 
 
