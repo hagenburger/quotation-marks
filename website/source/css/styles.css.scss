@@ -3,6 +3,7 @@
 @import "compass";
 @import "compass-placeholders";
 @import "quotation-marks";
+@import "github-badge";
 
 
 //// COLORS ////
@@ -110,5 +111,24 @@ style {
   letter-spacing: 3px;
   margin: -1.9em 0 0 -0.07em;
   text-transform: uppercase;
+}
+
+
+//// GITHUB BADGE ////
+
+.github-badge {
+  @include github-badge(
+    $background: $black,
+    $backside-background: $gold,
+    $text-color: $gold !important,
+    $backside-text-color: $black !important
+  );
+
+  span {
+    @extend %headline-font;
+    letter-spacing: 1px;
+    padding-bottom: 6px;
+    @include box-shadow(none);
+  }
 }
 

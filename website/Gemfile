@@ -7,4 +7,5 @@ gem 'compass', '1.0.0.alpha.19'
 gem 'compass-placeholders'
 gem 'livingstyleguide'
 gem 'quotation-marks', path: '..'
+gem 'github-badge'
 
