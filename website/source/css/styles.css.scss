@@ -70,6 +70,24 @@ style {
 
 //// HEADER ////
 
+@include keyframes(header--name-before) {
+  0%, 48% {
+    @include transform(rotateZ(0deg));
+  }
+  50%, 98% {
+    @include transform(rotateZ(-180deg) translateY(-15px));
+  }
+}
+
+@include keyframes(header--name-after) {
+  0%, 48% {
+    @include transform(rotateZ(0deg));
+  }
+  50%, 98% {
+    @include transform(rotateZ(180deg));
+  }
+}
+
 .header {
   @extend %block;
   @extend %headline-font;
@@ -88,12 +106,15 @@ style {
     font-size: 150px;
     position: absolute;
     right: 100%;
+    @include animation(header--name-before 10s infinite);
   }
 
   &::after {
     left: 100%;
     position: absolute;
-    top: 52%
+    top: 52%;
+    @include transform-origin(10px, 18px);
+    @include animation(header--name-after 10s infinite);
   }
 }
 
