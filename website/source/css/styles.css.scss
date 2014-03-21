@@ -5,6 +5,12 @@
 @import "quotation-marks";
 
 
+//// COLORS ////
+
+$black: black;
+$white: white;
+$gold: #E0CD80;
+
 //// RESET ////
 
 * {
@@ -52,6 +58,12 @@ style {
   background: white;
   font-family: "tablet-gothic", sans-serif;
   font-size: 14px;
+}
+
+.layout--container {
+  background: $gold;
+  display: block;
+  padding: 100px 0;
 }
 
 
