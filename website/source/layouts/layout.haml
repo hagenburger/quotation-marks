@@ -1,0 +1,37 @@
+!!!html5
+%html
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    %meta(name="description" content="An easy to use mixin for localized quotation marks in Sass and Compass")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
+    %meta(name="author" content="Nico Hagenburger")
+    %title= data.page.title
+    %link(href="#{asset_path(:css, 'styles')}" rel="stylesheet")
+    %script(src="//use.typekit.net/rry6ens.js")
+    %script try{Typekit.load();}catch(e){}
+  %body.layout
+    %header.header
+      .header--logo
+        %h1.header--name<
+          %span.header--name-word> Quotation
+          \-
+          %span.header--name-word> Marks
+        %h2.header--slogan A Sass Typography Extension
+    .layout--container
+      %article.markdown
+        = yield
+    %script
+      :plain
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+          var u=(("https:" == document.location.protocol) ? "https" : "http") + "://nh.fornax.uberspace.de/piwik/";
+          _paq.push(["setTrackerUrl", u+"piwik.php"]);
+          _paq.push(["setSiteId", "4"]);
+          var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+          g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+          })();
+

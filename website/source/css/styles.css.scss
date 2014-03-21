@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass-placeholders";
+@import "quotation-marks";
+
+
+//// RESET ////
+
+* {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: inherit;
+  display: inline;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  text-decoration: none;
+  vertical-align: baseline;
+  @include box-sizing(border-box);
+}
+
+head,
+script,
+style {
+  display: none;
+}
+
+
+//// EXTENDABLES ////
+
+%block {
+  display: block;
+  margin: auto;
+  width: 600px;
+}
+
+%headline-font {
+  font-family: "ambroise-firmin-std", serif;
+}
+
+
+//// LAYOUT ////
+
+.layout {
+  background: white;
+  font-family: "tablet-gothic", sans-serif;
+  font-size: 14px;
+}
+
+
+//// HEADER ////
+
+.header {
+  @extend %block;
+  @extend %headline-font;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.header--name {
+  display: inline-block;
+  font-size: 50px;
+  position: relative;
+  letter-spacing: 1.7px;
+  @include quotation-marks(en);
+
+  &::before {
+    font-size: 150px;
+    position: absolute;
+    right: 100%;
+  }
+
+  &::after {
+    left: 100%;
+    position: absolute;
+    top: 52%
+  }
+}
+
+.header--name-word {
+  @extend %display-inline-block;
+
+  &::first-letter {
+    font-size: 150px;
+  }
+}
+
+.header--slogan {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin: -1.9em 0 0 -0.07em;
+  text-transform: uppercase;
+}
+
