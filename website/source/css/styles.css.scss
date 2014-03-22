@@ -71,20 +71,83 @@ style {
 //// HEADER ////
 
 @include keyframes(header--name-before) {
-  0%, 48% {
+  0%, 19% {
+    text-indent: 0;
+    width: 56px;
     @include transform(rotateZ(0deg));
   }
-  50%, 98% {
+  20%, 39% {
+    color: $gold;
+    text-indent: 0;
     @include transform(rotateZ(-180deg) translateY(-15px));
+  }
+  39.2% {
+    color: $white;
+    @include transform(rotateZ(-180deg) translateY(-15px));
+  }
+  39.8% {
+    color: $white;
+    @include transform(rotateZ(-180deg) translateY(-48px));
+  }
+  40%, 59% {
+    color: $gold;
+    text-indent: -0.35em;
+    @include transform(rotateZ(-180deg) translateY(-48px));
+  }
+  60%, 79% {
+    color: $gold;
+    text-indent: -0.35em;
+    width: 56px;
+    @include transform(rotateZ(0deg) translateY(6px));
+  }
+  79.2%, 79.8% {
+    color: $white;
+  }
+  80%, 100% {
+    color: $gold;
+    text-indent: -28px;
+    width: 28px;
+    @include transform(rotateZ(0deg));
   }
 }
 
 @include keyframes(header--name-after) {
-  0%, 48% {
+  0%, 19% {
+    width: 19px;
     @include transform(rotateZ(0deg));
   }
-  50%, 98% {
-    @include transform(rotateZ(180deg));
+  20%, 39% {
+    color: $gold;
+    text-indent: 0;
+    @include transform(rotateZ(180deg) translateX(3px) translateY(3.5px));
+  }
+  39.2% {
+    color: $white;
+    @include transform(rotateZ(180deg) translateX(3px) translateY(3.5px));
+  }
+  39.8% {
+    color: $white;
+    @include transform(rotateZ(180deg) translateX(-3px) translateY(-43px));
+  }
+  40%, 59% {
+    color: $gold;
+    text-indent: -0.35em;
+    @include transform(rotateZ(180deg) translateX(-3px) translateY(-43px));
+  }
+  60%, 79% {
+    color: $gold;
+    text-indent: -0.35em;
+    width: 19px;
+    @include transform(rotateZ(0deg) translateY(1px));
+  }
+  79.2%, 79.8% {
+    color: $white;
+  }
+  80%, 99.8% {
+    color: $gold;
+    text-indent: 0;
+    width: 9px;
+    @include transform(rotateZ(0deg));
   }
 }
 
@@ -100,21 +163,30 @@ style {
   font-size: 50px;
   position: relative;
   letter-spacing: 1.7px;
-  @include quotation-marks(en);
 
   &::before {
+    color: $gold;
+    content: "“»";
     font-size: 150px;
+    overflow: hidden;
     position: absolute;
     right: 100%;
-    @include animation(header--name-before 10s infinite);
+    white-space: nowrap;
+    width: 56px;
+    @include animation(header--name-before 20s infinite);
   }
 
   &::after {
+    color: $gold;
+    content: "”«";
     left: 100%;
+    overflow: hidden;
     position: absolute;
     top: 52%;
+    white-space: nowrap;
+    width: 19px;
     @include transform-origin(10px, 18px);
-    @include animation(header--name-after 10s infinite);
+    @include animation(header--name-after 20s infinite);
   }
 }
 
