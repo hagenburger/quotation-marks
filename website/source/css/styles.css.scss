@@ -213,10 +213,11 @@ style {
 .github-badge {
   @include github-badge(
     $background: $black,
-    $backside-background: $gold,
+    $backside-background: darken($gold, 10%),
     $text-color: $gold !important,
     $backside-text-color: $black !important
   );
+  position: fixed;
 
   span {
     @extend %headline-font;
