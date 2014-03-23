@@ -2,3 +2,12 @@
 title: Quotation-Marks
 ---
 
+- renderer = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+- markdown = File.read('../README.md')
+- markdown.sub! /\A.+?#/m, '#'
+- markdown.sub! /# Contributing.+?\Z/m, ''
+- html     = renderer.render(markdown)
+
+:plain
+  #{html}
+

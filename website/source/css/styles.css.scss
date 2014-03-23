@@ -226,3 +226,83 @@ style {
   }
 }
 
+
+//// MARKDOWN ////
+
+.markdown {
+  @extend %block;
+
+  h1,
+  h2,
+  h3,
+  p,
+  pre,
+  ul,
+  ol {
+    display: block;
+    margin: 0 0 0.75rem;
+  }
+
+  strong {
+    @extend %font-weight-bold;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    @extend %headline-font;
+    color: $white;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    margin-top: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      background: mix($gold, $white, 80%);
+      content: "";
+      display: block;
+      height: 1px;
+      margin: 0.3rem auto;
+      width: 33%;
+    }
+  }
+
+  h1 + h2,
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  pre {
+    $border-width: 50px;
+    border: mix($black, $gold, 10%) solid;
+    border-width: 1px $border-width;
+    background: $white;
+    color: darken($gold, 20%);
+    font-size: 0.75rem;
+    margin: 0 (-$border-width) 0.75rem;
+    padding: 0.5rem;
+    position: relative;
+
+    &:before,
+    &:after {
+      background: mix($white, $gold, 10%);
+      bottom: 0;
+      content: "";
+      position: absolute;
+      Xright: -$border-width - 2px;
+      right: floor($border-width * -0.8);
+      top: 0;
+      width: floor($border-width * 0.8);
+    }
+
+    &:before {
+      Xleft: -$border-width - 2px;
+      left: floor($border-width * -0.8);
+    }
+  }
+}
+
