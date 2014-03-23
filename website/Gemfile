@@ -9,4 +9,5 @@ gem 'livingstyleguide'
 gem 'quotation-marks', path: '..'
 gem 'github-badge'
 gem 'redcarpet'
+gem 'minisyntax'
 
