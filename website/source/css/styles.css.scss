@@ -6,6 +6,13 @@
 @import "github-badge";
 
 
+//// SPRITES ////
+
+$logos-spacing: 70px;
+$logos-align: 50%;
+@import "logos/*.png";
+
+
 //// COLORS ////
 
 $black: black;
@@ -59,12 +66,6 @@ style {
   background: white;
   font-family: "tablet-gothic", sans-serif;
   font-size: 14px;
-}
-
-.layout--container {
-  background: $gold;
-  display: block;
-  padding: 100px 0;
 }
 
 
@@ -228,11 +229,22 @@ style {
 }
 
 
+//// DOCUMENTATION ////
+
+.documentation {
+  background: $gold;
+  display: block;
+  padding: 100px 0;
+}
+
+.documentation--container {
+  @extend %block;
+}
+
+
 //// MARKDOWN ////
 
 .markdown {
-  @extend %block;
-
   h1,
   h2,
   h3,
@@ -361,4 +373,37 @@ style {
   }
 }
 
+
+//// OTHER PROJECTS ////
+
+.other-projects {
+  background: $black;
+  display: block;
+  padding: 50px 0;
+  text-align: center
+}
+
+.other-projects--item {
+  @extend .logos-sprite;
+  background-size: 100px;
+  color: white;
+  display: inline-block;
+  margin: 20px;
+  padding-top: 110px;
+  text-align: center;
+  width: 170px;
+  opacity: 1;
+  @include transition(all, 0.1s);
+
+  @each $item in javascriptgrid, livingstyleguide, hagenburger {
+    &.-#{$item} {
+      $position: sprite-position($logos-sprites, $item, $offset-x: 50%);
+      background-position: nth($position, 1) (nth($position, 2) / 2);
+    }
+  }
+
+  &:hover {
+    @include transform(scale(1.1));
+  }
+}
 

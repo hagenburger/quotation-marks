@@ -6,6 +6,13 @@ title: Quotation-Marks
 - readme.sub! /\A.+?#/m, '#'
 - readme.sub! /# Contributing.+?\Z/m, ''
 
-:plain
-  #{markdown(readme)}
+.documentation
+  .documentation--container
+    %article.markdown
+      :plain
+        #{markdown(readme)}
+.other-projects
+  = link_to 'The JavaScript Grid', 'http://javascriptgrid.org', class: 'other-projects--item -javascriptgrid'
+  = link_to 'Blog', 'http://hagenburger.net', class: 'other-projects--item -hagenburger'
+  = link_to 'The LivingStyleGuide Gem', 'http://livingstyleguide.org', class: 'other-projects--item -livingstyleguide'
 
