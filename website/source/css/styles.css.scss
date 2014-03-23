@@ -380,7 +380,19 @@ style {
   background: $black;
   display: block;
   padding: 50px 0;
-  text-align: center
+  text-align: center;
+
+  &:after {
+    @extend .logos-sprite;
+    $position: sprite-position($logos-sprites, madeinberlin);
+    background-position: nth($position, 1) (nth($position, 2) / 2);
+    background-size: 100px;
+    content: "";
+    display: block;
+    height: 28px;
+    margin: 50px auto;
+    width: 100px;
+  }
 }
 
 .other-projects--item {
