@@ -278,7 +278,7 @@ style {
 
   pre {
     $border-width: 50px;
-    border: mix($black, $gold, 10%) solid;
+    border: mix($black, $gold, 3%) solid;
     border-width: 1px $border-width;
     background: $white;
     color: darken($gold, 20%);
