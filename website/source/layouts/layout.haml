@@ -18,6 +18,11 @@
           \-
           %span.header--name-word> Marks
         %h2.header--slogan A Sass Typography Extension
+        .header--version
+          %a.header--version-container(href="https://github.com/hagenburger/quotation-marks/blob/master/CHANGELOG.md")
+            .header--version-title Version
+            .header--version-changelog Changelog
+            .header--version-current= gem_version
     .layout--container
       = yield
     %a.github-badge(href="https://github.com/hagenburger/quotation-marks")

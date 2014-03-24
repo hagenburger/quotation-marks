@@ -209,6 +209,78 @@ style {
 }
 
 
+.header--version,
+.header--version-container {
+  &,
+  &:before,
+  &:after {
+    background: inherit;
+    content: "";
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    z-index: -1;
+  }
+
+  &:before {
+    @include transform(rotate(15deg));
+  }
+
+  &:after {
+    @include transform(rotate(-15deg));
+  }
+}
+
+.header--version {
+  background: $gold;
+  color: $black;
+  left: 50%;
+  margin-left: 300px;
+  top: 20px;
+  z-index: 2;
+  @include transform(rotate(-45deg));
+
+  &:hover {
+    background: $black;
+    color: $gold;
+  }
+}
+
+.header--version-container {
+  z-index: 3;
+  @include transform(rotate(45deg));
+}
+
+.header--version-changelog,
+.header--version-title,
+.header--version-current {
+  display: block;
+  margin: 0.2rem 0 -1rem;
+  position: relative;
+  z-index: 4;
+}
+
+.header--version-current {
+  font-size: 2.5rem;
+}
+
+.header--version-changelog {
+  display: none;
+
+  .header--version:hover & {
+    @extend %display-block;
+  }
+}
+
+.header--version-title {
+  .header--version:hover & {
+    @extend %display-none;
+  }
+}
+
+
 //// GITHUB BADGE ////
 
 .github-badge {

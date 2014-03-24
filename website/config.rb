@@ -14,6 +14,15 @@ configure :build do
 end
 
 helpers do
+  def gem_version
+    # Prefer `git tag` over version.rb as tags are released:
+    versions = `cd .. && git tag`.split(/\n/)
+    current  = versions.last
+    current.sub(/^v/, '')
+  rescue
+    '0.0.0'
+  end
+
   def markdown(source)
     renderer = Redcarpet::Markdown.new(RedcarpetHTML, fenced_code_blocks: true)
     renderer.render(source)
