@@ -52,7 +52,7 @@ style {
 %block {
   display: block;
   margin: auto;
-  width: 598px;
+  max-width: 598px;
 }
 
 %headline-font {
@@ -166,6 +166,10 @@ style {
   position: relative;
   letter-spacing: 1.7px;
 
+  @media all and (max-width: 598px) {
+    line-height: 120px;
+  }
+
   &::before {
     color: $gold;
     content: "“»";
@@ -176,6 +180,10 @@ style {
     white-space: nowrap;
     width: 56px;
     @include animation(header--name-before 20s infinite);
+
+    @media all and (max-width: 598px) {
+      display: none;
+    }
   }
 
   &::after {
@@ -189,6 +197,10 @@ style {
     width: 19px;
     @include transform-origin(10px, 18px);
     @include animation(header--name-after 20s infinite);
+
+    @media all and (max-width: 598px) {
+      display: none;
+    }
   }
 }
 
@@ -247,6 +259,11 @@ style {
   z-index: 2;
   @include transform(rotate(-45deg));
 
+  @media all and (max-width: 598px) {
+    left: auto;
+    right: 20px;
+  }
+
   &:hover {
     background: $black;
     color: $gold;
@@ -295,7 +312,10 @@ style {
     $text-color: $gold !important,
     $backside-text-color: $black !important
   );
-  position: fixed;
+
+  @media all and (min-width: 599px) {
+    position: fixed;
+  }
 
   span {
     @extend %headline-font;
@@ -350,6 +370,10 @@ style {
     text-align: center;
     text-transform: uppercase;
 
+    @media all and (max-width: 598px) {
+      font-size: 2rem;
+    }
+
     &::before,
     &::after {
       background: mix($gold, $white, 80%);
@@ -370,6 +394,12 @@ style {
     text-align: center;
   }
 
+  p {
+    @media all and (max-width: 598px) {
+      padding: 0 0.5rem;
+    }
+  }
+
   pre {
     $border-width: 50px;
     border: mix($black, $gold, 3%) solid;
@@ -378,8 +408,16 @@ style {
     color: darken($gold, 20%);
     font-size: 0.75rem;
     margin: 0 (-$border-width) 0.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
     padding: 0.5rem;
     position: relative;
+
+    @media all and (max-width: 598px) {
+      border-width: 1px 0;
+      font-size: 0.6rem;
+      margin: 0 0 0.75rem;
+    }
 
     &.-css {
       background: $black;
@@ -395,6 +433,10 @@ style {
       top: 0;
       width: floor($border-width * 0.8);
       opacity: 0.1;
+
+      @media all and (max-width: 598px) {
+        display: none;
+      }
     }
 
     &:before {
