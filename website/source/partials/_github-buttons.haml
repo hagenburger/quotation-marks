@@ -1,0 +1,9 @@
+.github-btns
+  - %w(watch fork follow).each do |type|
+    %span.github-btn(id="github--#{type}")
+      %a.gh-btn(id="github--#{type}-link" href="#" target="_blank")
+        %span.gh-ico
+        %span.gh-text(id="github--#{type}-text")
+      %a.gh-count(id="github--#{type}-count" href="#" target="_blank")
+= javascript_include_tag 'github-buttons'
+
