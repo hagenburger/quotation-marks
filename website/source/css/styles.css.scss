@@ -197,6 +197,11 @@ style {
 
   &::first-letter {
     font-size: 150px;
+    margin-right: -0.01em;
+  }
+
+  &:first-child::first-letter {
+    margin-right: -0.03em;
   }
 }
 
@@ -341,7 +346,7 @@ style {
     color: $white;
     font-size: 2.5rem;
     letter-spacing: 0.1em;
-    margin-top: 2.5rem;
+    margin: 5rem 0 1.5rem;
     text-align: center;
     text-transform: uppercase;
 
@@ -359,6 +364,10 @@ style {
   h1 + h2,
   h2:first-child {
     margin-top: 0;
+  }
+
+  h3 {
+    text-align: center;
   }
 
   pre {
