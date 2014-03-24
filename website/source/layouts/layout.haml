@@ -6,6 +6,7 @@
     %meta(name="description" content="An easy to use mixin for localized quotation marks in Sass and Compass")
     %meta(name="viewport" content="width=device-width, initial-scale=1")
     %meta(name="author" content="Nico Hagenburger")
+    %meta(property="og:image" content="http://quotation-marks.org/#{asset_path(:images, 'quotation-marks-og.jpg')}")
     %title= data.page.title
     %link(href="#{asset_path(:css, 'styles')}" rel="stylesheet")
     %script(src="//use.typekit.net/rry6ens.js")
@@ -13,6 +14,7 @@
   %body.layout
     %header.header
       .header--logo
+        %noscript= image_tag 'quotation-marks-og.jpg', class: 'header--logo-image'
         %h1.header--name<
           %span.header--name-word> Quotation
           \-

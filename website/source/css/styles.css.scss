@@ -211,6 +211,10 @@ style {
   }
 }
 
+.header--logo-image {
+  @extend %display-none;
+}
+
 .header--name-word {
   @extend %display-inline-block;
 
