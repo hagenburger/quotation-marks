@@ -1,5 +1,8 @@
 Copyright (c) 2014 Nico Hagenburger
 
+This license applies to the Sass extension source code. It does not
+cover artwork and similar stuff mostly located in the website/ folder.
+
 MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining
