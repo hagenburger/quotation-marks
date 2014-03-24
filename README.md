@@ -17,6 +17,8 @@ An easy to use mixin for quotation marks in Sass
 ```
 
 ``` css
+/* RESULT */
+
 .my-class:before {
   content: "“";
 }
@@ -46,6 +48,8 @@ An easy to use mixin for quotation marks in Sass
 ```
 
 ``` css
+/* RESULT */
+
 .my-class:lang(en):before,
 .my-class:lang(de):after {
   content: "“";

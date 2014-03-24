@@ -34,10 +34,9 @@ class RedcarpetHTML < ::Redcarpet::Render::HTML
     if language == 'html'
       code = ERB::Util.html_escape(code)
     elsif language
-      language = 'css' if language == 'scss'
-      code = ::MiniSyntax.highlight(code, language)
+      code = ::MiniSyntax.highlight(code, language == 'scss' ? 'css' : language)
     end
-    %Q(<pre><code>#{code}</code></pre>)
+    %Q(<pre class="-#{language}"><code>#{code}</code></pre>)
   end
 end
 

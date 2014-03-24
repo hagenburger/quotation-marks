@@ -381,15 +381,20 @@ style {
     padding: 0.5rem;
     position: relative;
 
+    &.-css {
+      background: $black;
+    }
+
     &:before,
     &:after {
-      background: mix($white, $gold, 10%);
+      background: inherit;
       bottom: 0;
       content: "";
       position: absolute;
       right: floor($border-width * -0.8);
       top: 0;
       width: floor($border-width * 0.8);
+      opacity: 0.1;
     }
 
     &:before {
@@ -402,7 +407,7 @@ style {
 //// SYNTAX ////
 
 .markdown pre {
-  $color: #9D34C0;
+  $color: #b965ba;
   color: $color;
 
   kbd {
