@@ -170,11 +170,13 @@ style {
   background: inline-image("sass.svg") no-repeat center;
   display: inline-block;
   font-size: 50px;
-  position: relative;
   letter-spacing: 1.7px;
+  position: relative;
+  white-space: nowrap;
 
   @media all and (max-width: #{$page-width}) {
     line-height: 120px;
+    white-space: normal;
   }
 
   &::before {
