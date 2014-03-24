@@ -15,6 +15,11 @@ $logos-align: 50%;
 @import "logos/*.png";
 
 
+//// METRICS ////
+
+$page-width: 600px;
+
+
 //// COLORS ////
 
 $black: black;
@@ -54,7 +59,7 @@ style {
 %block {
   display: block;
   margin: auto;
-  max-width: 598px;
+  max-width: $page-width;
 }
 
 %headline-font {
@@ -168,7 +173,7 @@ style {
   position: relative;
   letter-spacing: 1.7px;
 
-  @media all and (max-width: 598px) {
+  @media all and (max-width: #{$page-width}) {
     line-height: 120px;
   }
 
@@ -183,7 +188,7 @@ style {
     width: 56px;
     @include animation(header--name-before 20s infinite);
 
-    @media all and (max-width: 598px) {
+    @media all and (max-width: #{$page-width}) {
       display: none;
     }
   }
@@ -200,7 +205,7 @@ style {
     @include transform-origin(10px, 18px);
     @include animation(header--name-after 20s infinite);
 
-    @media all and (max-width: 598px) {
+    @media all and (max-width: #{$page-width}) {
       display: none;
     }
   }
@@ -261,9 +266,9 @@ style {
   z-index: 2;
   @include transform(rotate(-45deg));
 
-  @media all and (max-width: 598px) {
+  @media all and (max-width: 778px) {
     left: auto;
-    right: 20px;
+    right: 30px;
   }
 
   &:hover {
@@ -315,7 +320,7 @@ style {
     $backside-text-color: $black !important
   );
 
-  @media all and (min-width: 599px) {
+  @media all and (min-width: #{$page-width + 1px}) {
     position: fixed;
   }
 
@@ -372,7 +377,7 @@ style {
     text-align: center;
     text-transform: uppercase;
 
-    @media all and (max-width: 598px) {
+    @media all and (max-width: #{$page-width}) {
       font-size: 2rem;
     }
 
@@ -397,7 +402,7 @@ style {
   }
 
   p {
-    @media all and (max-width: 598px) {
+    @media all and (max-width: #{$page-width}) {
       padding: 0 0.5rem;
     }
   }
@@ -415,7 +420,7 @@ style {
     padding: 0.5rem;
     position: relative;
 
-    @media all and (max-width: 598px) {
+    @media all and (max-width: #{$page-width}) {
       border-width: 1px 0;
       font-size: 0.6rem;
       margin: 0 0 0.75rem;
@@ -436,7 +441,7 @@ style {
       width: floor($border-width * 0.8);
       opacity: 0.1;
 
-      @media all and (max-width: 598px) {
+      @media all and (max-width: #{$page-width}) {
         display: none;
       }
     }
@@ -570,6 +575,56 @@ style {
 
   &:hover {
     @include transform(scale(1.1));
+  }
+}
+
+
+//// ABOUT ////
+
+.about {
+
+}
+
+.about--container {
+  @extend %block;
+  padding: 150px 0;
+}
+
+
+.about--title {
+  @extend %headline-font;
+  color: $gold;
+  display: block;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &::before,
+  &::after {
+    background: mix($gold, $white, 20%);
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 0.3rem auto;
+    width: 33%;
+  }
+}
+
+.about--photo {
+  margin: 0 -50px 0.75rem;
+  max-width: 700px;
+}
+
+.about--paragraph {
+  display: block;
+  margin: 0 0 0.75rem;
+  @include hyphens(auto);
+
+  a {
+    @extend %hover-link;
+    color: mix($gold, $black, 66%);
   }
 }
 

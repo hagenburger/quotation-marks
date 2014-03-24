@@ -16,6 +16,16 @@ title: Quotation-Marks
       .languages
         - languages do |lang, quot_start, quot_end|
           .languages--item(lang=lang)= lang
+.about
+  .about--container
+    %h2.about--title Behind the Scenes
+    = image_tag 'nico.jpg', class: 'about--photo'
+    %p.about--paragraph
+      Designed and developed by #{link_to "Nico Hagenburger", "http://www.hagenburger.net"} — a Berlin-based designer and developer who loves typography and cares about having quality print on the web. Being raised in Europe, he’s visited many countries and learned cultural — and especially typographical — differences, partially by collecting and studying the design of Coke cans and train station signs.
+    %p.about--paragraph
+      Follow Nico on #{link_to "Twitter", "https://twitter.com/hagenburger"}, #{link_to "Github", "https://github.com/hagenburger"}, and #{link_to "Dribbble", "http://dribbble.com/hagenburger"}.
+    %p.about--paragraph
+      Special thanks to #{link_to "Jennifer Geacone-Gruz", "https://twitter.com/anomiseditrix"} for proofreading and #{link_to "Hugo Giraudel", "https://twitter.com/HugoGiraudel"} for #{link_to "some discussions", "https://github.com/hagenburger/compass-placeholders/issues/8"} that somehow may be a reason for this gem.
 .other-projects
   = link_to 'The JavaScript Grid', 'http://javascriptgrid.org', class: 'other-projects--item -javascriptgrid'
   = link_to 'Blog', 'http://hagenburger.net', class: 'other-projects--item -hagenburger'
