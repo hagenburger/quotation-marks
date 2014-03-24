@@ -52,7 +52,7 @@ style {
 %block {
   display: block;
   margin: auto;
-  width: 600px;
+  width: 598px;
 }
 
 %headline-font {
@@ -456,6 +456,30 @@ style {
     display: inline;
     text-decoration: underline;
     vertical-align: baseline;
+  }
+}
+
+
+//// LANGUAGES ////
+
+.languages {
+  @extend %display-block;
+  @extend %text-align-center;
+}
+
+.languages--item {
+  background: $black;
+  color: $gold;
+  display: inline-block;
+  line-height: 38px;
+  margin-bottom: 4px;
+  width: 64px;
+  white-space: nowrap;
+  @include localized-quotation-marks(map-keys($quotation-marks));
+
+  &:before,
+  &:after {
+    color: $white;
   }
 }
 

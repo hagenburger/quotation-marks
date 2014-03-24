@@ -11,6 +11,10 @@ title: Quotation-Marks
     %article.markdown
       :plain
         #{markdown(readme)}
+      %h2 Available Languages
+      .languages
+        - languages do |lang, quot_start, quot_end|
+          .languages--item(lang=lang)= lang
 .other-projects
   = link_to 'The JavaScript Grid', 'http://javascriptgrid.org', class: 'other-projects--item -javascriptgrid'
   = link_to 'Blog', 'http://hagenburger.net', class: 'other-projects--item -hagenburger'

@@ -23,6 +23,15 @@ helpers do
     '0.0.0'
   end
 
+  def languages(&block)
+    scss = File.read('../stylesheets/_quotation-marks.scss')
+    array = scss.match(/\((.+?),?\s*\)/m)[1].split(',')
+    array.each do |item|
+      lang, quot_start, quot_end = item.strip.split(/[: ]+/)
+      block.call lang, quot_start, quot_end
+    end
+  end
+
   def markdown(source)
     renderer = Redcarpet::Markdown.new(RedcarpetHTML, fenced_code_blocks: true)
     renderer.render(source)
