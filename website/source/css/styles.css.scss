@@ -421,8 +421,6 @@ style {
     color: darken($gold, 20%);
     font-size: 0.75rem;
     margin: 0 (-$border-width) 0.75rem;
-    overflow-x: auto;
-    overflow-y: hidden;
     padding: 0.5rem;
     position: relative;
 
@@ -430,6 +428,8 @@ style {
       border-width: 1px 0;
       font-size: 0.6rem;
       margin: 0 0 0.75rem;
+      overflow-x: auto;
+      overflow-y: hidden;
     }
 
     &.-css {
