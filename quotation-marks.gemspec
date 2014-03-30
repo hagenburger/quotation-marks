@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['nico@hagenburger.net']
   spec.description   = %q{An easy to use mixin for quotation marks in Sass}
   spec.summary       = %q{I18n quotation marks for Sass}
-  spec.homepage      = ''
+  spec.homepage      = 'http://quotation-marks.org'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

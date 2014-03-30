@@ -1,5 +1,6 @@
 {
   "name": "Quotation Marks",
   "tags": ["quotation marks", "typography", "i18n"],
-  "description": "I18n quotation marks for Sass"
+  "description": "I18n quotation marks for Sass",
+  "website": "http://quotation-marks.org"
 }
