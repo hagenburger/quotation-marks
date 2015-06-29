@@ -1,0 +1,36 @@
+{
+  "name": "quotation-marks",
+  "homepage": "http://quotation-marks.org",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hagenburger/quotation-marks.git"
+  },
+  "authors": [
+    "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)"
+  ],
+  "description": "I18n quotation marks for Sass",
+  "main": [
+    "stylesheets/_quotation-marks.scss"
+  ],
+  "keywords": [
+    "quotation",
+    "marks",
+    "typography",
+    "i18n"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "pkg",
+    "Gemfile*",
+    "quotation-marks.gemspec",
+    "Rakefile",
+    "lib",
+    "website",
+    "DESIGN"
+  ]
+}
