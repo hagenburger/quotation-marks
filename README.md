@@ -70,6 +70,8 @@ quotation mark and just adds the selectors.
 
 ## Installation
 
+**Using RubyGems:**
+
 Add this line to your application’s Gemfile:
 
     gem 'quotation-marks'
@@ -81,6 +83,10 @@ And then execute:
 Or install it yourself as:
 
     gem install quotation-marks
+
+**Using Bower:**
+
+    bower install quotation-marks
 
 
 ## Contributing
@@ -94,6 +100,6 @@ Or install it yourself as:
 
 ## Copyright
 
-Copyright (c) 2014 [Nico Hagenburger](http://www.hagenburger.net).
+Copyright (c) 2014—2015 [Nico Hagenburger](http://www.hagenburger.net).
 See [MIT-LICENSE.md](MIT-LICENSE.md) for details.
 Get in touch with [@hagenburger](http://twitter.com/hagenburger) on Twitter.
